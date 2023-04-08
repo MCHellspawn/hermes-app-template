@@ -57,7 +57,7 @@ class RhasspySkill:
                 response.raise_for_status()
                 result = await response.json()
                 self._LOGGER.debug(f"Setup: Sentences GET result: {result}")
-                if result.get(f"intents/{self.app.name}.ini") == None:
+                if result.get(f"intents/{self.app.client_name}.ini") == None:
                     self._LOGGER.info(f"Setup: Sentences file note found")
                     # open the sentence file in read mode and split into a list
                     sentences = configparser.ConfigParser(allow_no_value=True)
@@ -73,7 +73,7 @@ class RhasspySkill:
                                 sentencesString = f"{sentencesString}{key}\n"
                             sentencesString = f"{sentencesString}\n"   
                         
-                        data[f"intents/{self.app.name}.ini"] = sentencesString
+                        data[f"intents/{self.app.client_name}.ini"] = sentencesString
 
                         if self._LOGGER != None:
                             self._LOGGER.info(f"Setup: Sentences POST data built")

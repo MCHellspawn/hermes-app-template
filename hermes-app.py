@@ -1,4 +1,4 @@
-"""Skill to work with the Grocy App."""
+"""Template Skill."""
 
 import logging
 from skill import RhasspySkill

@@ -30,7 +30,6 @@ class RhasspySkill:
     apiUrl = None
     satellite_id = None
     intents = None
-    grocy = None
     
     def __init__(self, name: str, app: HermesApp, config = None, logger = None) -> None:
         self.name = name
